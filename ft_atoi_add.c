@@ -1,11 +1,12 @@
 #include "push_swap.h"
 
-void	ft_atoi_add(char *str)
+/*atoi_add is my void function to convert characters into integers.
+First, skipping thru all tabs and spaces, recognizing if
+a sign is present then making the conversion to integers.*/
+void	atoi_add(char *str, head *stack_a)
 {
 	long long int	        res;
 	long long int           sign;
-    static head             stack_a;
-    static head             stack_b;
 
 	res = 0;
 	while ((*str >= 9 && *str <= 13) || *str == 32)
@@ -18,25 +19,16 @@ void	ft_atoi_add(char *str)
 	while (*str && *str >= '0' && *str <= '9')
 		res = res * 10 + *str++ - 48;
     res *= sign;
-    new_nb(&stack_a, res);
+    new_nb(stack_a, res);
     if ((*str >= 9 && *str <= 13) || *str == 32)
-        ft_atoi_add(str);
+        atoi_add(str, stack_a);
     else if (*str)
         printf("Error\n");
-    else
-    {
-        new_nb(&stack_b, 7);
-        new_nb(&stack_b, 8);
-        new_nb(&stack_b, 9);
-        print_list(&stack_b);
-        print_list(&stack_a);
-        //pb(&stack_a, &stack_b);
-        print_list(&stack_a);
-        print_list(&stack_b);
-    }
     return ;
 }
 
+/*new_nb is the function I use to add nodes into my linked list.
+I also increment my size variable here to keep track of the size of my list.*/
 head  *new_nb(head *list, int nb)
 {
     t_list                  *data;
@@ -53,10 +45,11 @@ head  *new_nb(head *list, int nb)
         x->next = data;
     }
     list->size++;
-    //printf("size: %lli", size);
     return (list);
 }
 
+/*last_pos is used to find the last node of my list. It is useful 
+for later operations on the list.*/
 t_list	*last_pos(head *list)
 {
 	t_list  *x;
@@ -69,6 +62,8 @@ t_list	*last_pos(head *list)
 	return (x);
 }
 
+/*print_list has the same concept as last_pos but while I'm going
+thru the list I print each node.*/
 void    print_list(head *list)
 {
     t_list  *x;
@@ -82,14 +77,26 @@ void    print_list(head *list)
     printf("NULL\n");
 }
 
+/*Driver code*/
 int main(int argc, char **argv)
 {
     int         i;
+    static head stack_a;
+    static head stack_b;
 
     i = 1;
     while (i < argc)
     {
-        ft_atoi_add(argv[i]);
+        atoi_add(argv[i], &stack_a);
         i++;
     }
+    new_nb(&stack_b, 6);
+    new_nb(&stack_b, 7);
+    new_nb(&stack_b, 8);
+    new_nb(&stack_b, 9);
+    new_nb(&stack_b, 10);
+    print_list(&stack_a);
+    print_list(&stack_b);
+    printf("Size(A):%lli\n", stack_a.size);
+    printf("Size(B):%lli\n", stack_b.size);
 }
