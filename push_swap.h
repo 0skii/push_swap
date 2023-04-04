@@ -29,6 +29,7 @@ head  		*new_nb(head *list, int nb);
 void    	print_list(head *list);
 t_list		*last_pos(head *list);
 t_list		*before_last_pos(head *list);
+int 		free_this(head *list, int torf);
 /*List Moves*/
 void		sa(head *stack_a);
 void		sb(head *stack_b);

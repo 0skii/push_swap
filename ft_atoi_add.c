@@ -99,4 +99,6 @@ int main(int argc, char **argv)
     print_list(&stack_b);
     printf("Size(A):%lli\n", stack_a.size);
     printf("Size(B):%lli\n", stack_b.size);
+    free_this(&stack_a, 1);
+    free_this(&stack_b, 1);
 }
