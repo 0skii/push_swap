@@ -113,8 +113,11 @@ int	main(int argc, char **argv)
 	print_list(&stack_b);
 	printf("Size(A):%lli\n", stack_a.size);
 	printf("Size(B):%lli\n", stack_b.size);
-	check_double(&stack_a);
-	check_sort(&stack_a);
+	mini_sort(&stack_a);
+	//check_double(&stack_a);
+	print_list(&stack_a);
+	if (check_sort(&stack_a))
+		printf("success\n");
 	//free_this(&stack_a, 1);
 	//free_this(&stack_b, 1);
 }

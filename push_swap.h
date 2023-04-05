@@ -44,6 +44,7 @@ t_list		*before_last_pos(t_head *list);
 int			free_this(t_head *list, int torf);
 void		check_double(t_head *list);
 int			check_sort(t_head *list);
+void		mini_sort(t_head *list);
 /*List Moves*/
 void		sa(t_head *stack_a);
 void		sb(t_head *stack_b);
