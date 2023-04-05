@@ -104,15 +104,17 @@ int	main(int argc, char **argv)
 		atoi_add(argv[i], &stack_a);
 		i++;
 	}
-	new_nb(&stack_b, 6);
+	/*new_nb(&stack_b, 6);
 	new_nb(&stack_b, 7);
 	new_nb(&stack_b, 8);
 	new_nb(&stack_b, 9);
-	new_nb(&stack_b, 10);
+	new_nb(&stack_b, 10);*/
 	print_list(&stack_a);
 	print_list(&stack_b);
 	printf("Size(A):%lli\n", stack_a.size);
 	printf("Size(B):%lli\n", stack_b.size);
-	free_this(&stack_a, 1);
-	free_this(&stack_b, 1);
+	check_double(&stack_a);
+	check_sort(&stack_a);
+	//free_this(&stack_a, 1);
+	//free_this(&stack_b, 1);
 }
