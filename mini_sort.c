@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void    mini_sort(t_head *list)
+void    mini_sort3(t_head *list)
 {
     t_list  *x;
     t_list  *x2;
@@ -34,3 +34,19 @@ void    mini_sort(t_head *list)
     if (check_sort(list))
         return ;
 }
+
+int addup(t_head *list)
+{
+    t_list      *x;
+    static int  total;
+
+    x = list->first;
+    while (x)
+    {
+        total = total + x->content;
+        x = x->next;
+    }
+    return (total);
+}
+
+void    mini_sort5(t_head *list)
