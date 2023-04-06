@@ -30,11 +30,11 @@ typedef struct t_list
 /*Control Structure*/
 typedef struct t_head
 {
-	t_list				*first;
-	long long int		size;
-}						t_head;
+	t_list	*first;
+	float	size;
+}			t_head;
 
-/*Converter*/
+/*Converter/Parsing*/
 void		atoi_add(char *str, t_head *stack_a);
 /*List Utils*/
 t_head		*new_nb(t_head *list, int nb);
@@ -44,8 +44,14 @@ t_list		*before_last_pos(t_head *list);
 int			free_this(t_head *list, int torf);
 void		check_double(t_head *list);
 int			check_sort(t_head *list);
+int			average(t_head *list);
+t_list  	*find_min(t_head *list);
+int 		r_or_rr(t_head *list);
+long int 	list_size(t_list *node);
+void    	node_move(t_head *list, t_list *node, int bora);
+/*Algos*/
 void		mini_sort3(t_head *list);
-int			addup(t_head *list);
+void    	mini_sort5(t_head *stack_a, t_head *stack_b);
 /*List Moves*/
 void		sa(t_head *stack_a);
 void		sb(t_head *stack_b);

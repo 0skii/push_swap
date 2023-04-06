@@ -111,12 +111,17 @@ int	main(int argc, char **argv)
 	new_nb(&stack_b, 10);*/
 	print_list(&stack_a);
 	print_list(&stack_b);
-	printf("Size(A):%lli\n", stack_a.size);
-	printf("Size(B):%lli\n", stack_b.size);
-	addup(&stack_a);
+	printf("Size(A):%f\n", stack_a.size);
+	printf("Size(B):%f\n", stack_b.size);
+	//node_move(&stack_a, find_min(&stack_a), r_or_rr(&stack_a));
+	//list_size(find_min(&stack_a));
+	//r_or_rr(&stack_a);
+	//average(&stack_a);
 	//mini_sort3(&stack_a);
 	//check_double(&stack_a);
-	//print_list(&stack_a);
+	mini_sort5(&stack_a, &stack_b);
+	print_list(&stack_a);
+	print_list(&stack_b);
 	//if (check_sort(&stack_a))
 	//	printf("success\n");
 	//free_this(&stack_a, 1);

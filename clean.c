@@ -66,6 +66,8 @@ int	check_sort(t_head *list)
 
 	if (!(list->first))
 		return (0);
+	if (list->size == 1)
+		return (0);
 	x = list->first;
 	x2 = list->first->next;
 	while (x2)
