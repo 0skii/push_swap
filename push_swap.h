@@ -20,7 +20,7 @@
 # include <stdarg.h>
 # include <limits.h>
 
-/*Main Structure*/
+/*List Structure*/
 typedef struct t_list
 {
 	long int		content;
