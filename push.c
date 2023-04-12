@@ -44,7 +44,6 @@ void	pa(t_head *stack_b, t_head *stack_a)
 void	pb(t_head *stack_a, t_head *stack_b)
 {
 	push(stack_a, stack_b);
-	print_list(stack_b);
 	stack_a->size--;
 	stack_b->size++;
 	printf("pb\n");
