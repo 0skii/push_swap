@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:21 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/04 11:43:30 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/12 22:08:17 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void		atoi_add(char *str, t_head *stack_a);
 t_head		*new_nb(t_head *list, int nb);
 void		print_list(t_head *list);
 t_list		*last_pos(t_head *list);
-t_list		*before_last_pos(t_head *list);
 int			free_this(t_head *list, int torf);
 void		check_double(t_head *list);
 int			check_sort(t_head *list);

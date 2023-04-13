@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:47 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/04 11:43:30 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/12 22:08:09 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,6 @@
 
 /*The reverse rotate move sends the last node to the first position
 of that same list, making the former first position now second.*/
-t_list	*before_last_pos(t_head *list)
-{
-	t_list	*x;
-
-	if (!list)
-		return (NULL);
-	x = list->first;
-	while (x && x->next->next == NULL)
-		x = x->next;
-	return (x);
-}
-
 static void	rev_rotate(t_head *list)
 {
 	t_list	*x;

@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:25:57 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/04 11:44:09 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/13 08:51:46 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	atoi_add(char *str, t_head *stack_a)
 		str++;
 	if (!*str)
 	{
-		printf("Error\n");
+		free_this(stack_a, 1);
 	}
 	while (*str && *str >= '0' && *str <= '9')
 		res = res * 10 + *str++ - 48;
@@ -37,7 +37,7 @@ void	atoi_add(char *str, t_head *stack_a)
 	if ((*str >= 9 && *str <= 13) || *str == 32)
 		atoi_add(str, stack_a);
 	else if (*str)
-		printf("Error\n");
+		free_this(stack_a, 1);
 	return ;
 }
 
@@ -104,26 +104,16 @@ int	main(int argc, char **argv)
 		atoi_add(argv[i], &stack_a);
 		i++;
 	}
-	/*new_nb(&stack_b, 6);
-	new_nb(&stack_b, 7);
-	new_nb(&stack_b, 8);
-	new_nb(&stack_b, 9);
-	new_nb(&stack_b, 10);*/
+	check_double(&stack_a);
 	print_list(&stack_a);
-	print_list(&stack_b);
 	printf("Size(A):%f\n", stack_a.size);
-	printf("Size(B):%f\n", stack_b.size);
-	//node_move(&stack_a, find_min(&stack_a), r_or_rr(&stack_a));
-	//list_size(find_min(&stack_a));
-	//r_or_rr(&stack_a);
-	//average(&stack_a);
-	//mini_sort3(&stack_a);
-	//check_double(&stack_a);
+	if (check_sort(&stack_a))
+		return(printf("List Sorted!\n"));
 	mini_sort5(&stack_a, &stack_b);
 	print_list(&stack_a);
 	print_list(&stack_b);
-	//if (check_sort(&stack_a))
-	//	printf("success\n");
-	//free_this(&stack_a, 1);
-	//free_this(&stack_b, 1);
+	if (check_sort(&stack_a))
+		return(printf("List Sorted!\n"));
+	free_this(&stack_a, 0);
+	free_this(&stack_b, 0);
 }
