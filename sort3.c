@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:27:49 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/13 16:45:52 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/13 17:00:08 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ void	mini_sort3(t_head *list)
 	}
 }
 
+/*I called this function freaknorm to stay polite. Our school's norm does 
+not accept long lines of code. Hence this almost useless function.
+Thanks norminette!*/
 int	freaknorm(t_head *list)
 {
 	t_list	*x;
