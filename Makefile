@@ -6,7 +6,7 @@
 #    By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/13 08:35:11 by ozerbib-          #+#    #+#              #
-#    Updated: 2023/04/13 08:39:18 by ozerbib-         ###   ########.fr        #
+#    Updated: 2023/04/13 10:50:41 by ozerbib-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC =	ft_atoi_add.c \
 			rotate.c \
 			swap.c \
 			sort3.c \
-			sort5.c \
+			sort5.c
 
 OBJS = $(SRC:%.c=%.o)
 
