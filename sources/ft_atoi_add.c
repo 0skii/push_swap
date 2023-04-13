@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:25:57 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/13 16:49:52 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/14 00:56:29 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int	main(int argc, char **argv)
 	check_double(&stack_a);
 	print_list(&stack_a);
 	if (check_sort(&stack_a))
-		return (free_this(&stack_a, 2));\
+		return (free_this(&stack_a, 2));
 	whatever_the_fuck(&stack_a, &stack_b);
 	print_list(&stack_a);
 	if (check_sort(&stack_a))
