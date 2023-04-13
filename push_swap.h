@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:21 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/13 15:19:50 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/13 16:47:41 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,14 @@ int			free_this(t_head *list, int torf);
 void		check_double(t_head *list);
 int			check_sort(t_head *list);
 int			average(t_head *list);
-t_list  	*find_min(t_head *list);
-int 		r_or_rr(t_head *list);
-long int 	list_size(t_list *node);
-void    	node_move(t_head *list, t_list *node, int bora);
+t_list		*find_min(t_head *list);
+int			r_or_rr(t_head *list);
+long int	list_size(t_list *node);
+void		node_move(t_head *list, t_list *node, int bora);
+int			freaknorm(t_head *list);
 /*Algos*/
 void		mini_sort3(t_head *list);
-void    	mini_sort5(t_head *stack_a, t_head *stack_b);
+void		mini_sort5(t_head *stack_a, t_head *stack_b);
 /*List Moves*/
 void		sa(t_head *stack_a);
 void		sb(t_head *stack_b);
