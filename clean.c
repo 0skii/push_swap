@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:10 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/13 08:33:49 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/13 10:47:23 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,20 @@ of my list. Either from an error or after every task was done successfully.*/
 int	free_this(t_head *list, int torf)
 {
 	t_list	*x;
+	t_list	*x2;
 
 	x = list->first;
-	while (x)
+	x2 = list->first->next;
+	while (x2)
 	{
-		list->first = x->next;
 		free(x);
-		x = list->first;
+		x = x2;
+		x2 = x->next;
 	}
-	if (torf)
+	free(x);
+	if (torf == 1)
 		write(1, "Error\n", 7);
-	else if (!torf)
+	else if (torf == 2)
 		write(1, "Memory Freed\n", 14);
 	exit(torf);
 }

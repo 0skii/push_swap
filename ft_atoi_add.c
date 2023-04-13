@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:25:57 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/13 08:51:46 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/13 10:27:08 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ int	main(int argc, char **argv)
 	static t_head	stack_b;
 
 	i = 1;
+	if (argc == 1)
+		exit(0);
 	while (i < argc)
 	{
 		atoi_add(argv[i], &stack_a);
@@ -107,13 +109,8 @@ int	main(int argc, char **argv)
 	check_double(&stack_a);
 	print_list(&stack_a);
 	printf("Size(A):%f\n", stack_a.size);
-	if (check_sort(&stack_a))
-		return(printf("List Sorted!\n"));
 	mini_sort5(&stack_a, &stack_b);
 	print_list(&stack_a);
-	print_list(&stack_b);
-	if (check_sort(&stack_a))
-		return(printf("List Sorted!\n"));
-	free_this(&stack_a, 0);
-	free_this(&stack_b, 0);
+	free_this(&stack_a, 2);
+	free_this(&stack_b, 2);
 }
