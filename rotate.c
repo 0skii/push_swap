@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:53 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/04 11:43:30 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:37:31 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ static void	rotate(t_head *list)
 void	ra(t_head *stack_a)
 {
 	rotate(stack_a);
-	printf("ra\n");
+	ft_printf("ra\n");
 }
 
 void	rb(t_head *stack_b)
 {
 	rotate(stack_b);
-	printf("rb\n");
+	ft_printf("rb\n");
 }
 
 void	rr(t_head *stack_a, t_head *stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);
-	printf("rr\n");
+	ft_printf("rr\n");
 }

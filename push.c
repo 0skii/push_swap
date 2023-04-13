@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:34 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/04 11:43:30 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:38:28 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	pa(t_head *stack_b, t_head *stack_a)
 	push(stack_b, stack_a);
 	stack_b->size--;
 	stack_a->size++;
-	printf("pa\n");
+	ft_printf("pa\n");
 }
 
 void	pb(t_head *stack_a, t_head *stack_b)
@@ -46,5 +46,5 @@ void	pb(t_head *stack_a, t_head *stack_b)
 	push(stack_a, stack_b);
 	stack_a->size--;
 	stack_b->size++;
-	printf("pb\n");
+	ft_printf("pb\n");
 }

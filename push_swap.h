@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:21 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/12 22:08:17 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:19:50 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <fcntl.h>
 # include <stdarg.h>
 # include <limits.h>
+# include "ft_printf/include/ft_printf.h"
 
 /*List Structure*/
 typedef struct t_list

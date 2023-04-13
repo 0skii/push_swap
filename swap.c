@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:59 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/04 11:43:30 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:36:42 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ static void	swap(t_head *list)
 void	sa(t_head *stack_a)
 {
 	swap(stack_a);
-	printf("sa\n");
+	ft_printf("sa\n");
 }
 
 void	sb(t_head *stack_b)
 {
 	swap(stack_b);
-	printf("sb\n");
+	ft_printf("sb\n");
 }
 
 void	ss(t_head *stack_a, t_head *stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
-	printf("ss\n");
+	ft_printf("ss\n");
 }

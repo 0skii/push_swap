@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:10 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/13 10:47:23 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:38:48 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	free_this(t_head *list, int torf)
 	}
 	free(x);
 	if (torf == 1)
-		write(1, "Error\n", 7);
+		ft_printf("Error\n");
 	else if (torf == 2)
-		write(1, "Memory Freed\n", 14);
+		ft_printf("Memory freed\n");
 	exit(torf);
 }
 

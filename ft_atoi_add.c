@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:25:57 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/13 10:27:08 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:41:06 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,9 +108,10 @@ int	main(int argc, char **argv)
 	}
 	check_double(&stack_a);
 	print_list(&stack_a);
-	printf("Size(A):%f\n", stack_a.size);
 	mini_sort5(&stack_a, &stack_b);
 	print_list(&stack_a);
+	if (check_sort(&stack_a))
+		ft_printf("Sorted\n");
 	free_this(&stack_a, 2);
 	free_this(&stack_b, 2);
 }
