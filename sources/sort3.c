@@ -21,18 +21,23 @@ is larger the the middle one or the opposit. I then go deeper in the
 possibilities and make the moves necessary for every possible order.*/
 void	mini_sort3_pt1(t_head *list)
 {
-	t_list	*x;
-	t_list	*x2;
+	t_list		*x;
+	t_list		*x2;
+	long int	i;
 
 	if (!list)
 		return ;
 	x = list->first;
 	x2 = x->next;
+	i = 1;
+	i += list_size(x);
 	if (x->content > x2->content)
 	{
 		if (freaknorm(list) == 1)
 			ra(list);
 		else if (x->content < last_pos(list)->content)
+			sa(list);
+		else if (i == 2)
 			sa(list);
 		else
 		{
@@ -45,8 +50,8 @@ void	mini_sort3_pt1(t_head *list)
 
 void	mini_sort3_pt2(t_head *list)
 {
-	t_list	*x;
-	t_list	*x2;
+	t_list		*x;
+	t_list		*x2;
 
 	x = list->first;
 	x2 = x->next;
