@@ -85,10 +85,10 @@ void	print_list(t_head *list)
 	x = list->first;
 	while (x)
 	{
-		printf("%ld -> ", x->content);
+		ft_printf("%i -> ", x->content);
 		x = x->next;
 	}
-	printf("NULL\n");
+	write(1, "NULL\n", 6);
 }
 
 /*Driver code*/
@@ -110,7 +110,7 @@ int	main(int argc, char **argv)
 	print_list(&stack_a);
 	if (check_sort(&stack_a))
 		return (free_this(&stack_a, 2));
-	mini_sort3(&stack_a);
+	mini_sort5(&stack_a, &stack_b);
 	print_list(&stack_a);
 	if (check_sort(&stack_a))
 		ft_printf("Sorted\n");

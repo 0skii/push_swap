@@ -83,7 +83,7 @@ void	mini_sort5(t_head *stack_a, t_head *stack_b)
 	pb(stack_a, stack_b);
 	node_move(stack_a, find_min(stack_a), r_or_rr(stack_a));
 	pb(stack_a, stack_b);
-	mini_sort3(stack_a);
+	mini_sort3_pt1(stack_a);
 	pa(stack_b, stack_a);
 	pa(stack_b, stack_a);
 }

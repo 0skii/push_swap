@@ -51,7 +51,8 @@ long int	list_size(t_list *node);
 void		node_move(t_head *list, t_list *node, int bora);
 int			freaknorm(t_head *list);
 /*Algos*/
-void		mini_sort3(t_head *list);
+void		mini_sort3_pt1(t_head *list);
+void		mini_sort3_pt2(t_head *list);
 void		mini_sort5(t_head *stack_a, t_head *stack_b);
 /*List Moves*/
 void		sa(t_head *stack_a);
