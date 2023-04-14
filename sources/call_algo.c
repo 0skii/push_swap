@@ -24,6 +24,6 @@ void	whatever_the_fuck(t_head *stack_a, t_head *stack_b)
 		mini_sort3_pt1(stack_a);
 	else if (i > 3 && i <= 5)
 		mini_sort5(stack_a, stack_b);
-	else
-		ft_printf("Error. Insert a max. of 5 arguments.\n");
+	else if (i > 5)
+		average_push(stack_a, stack_b);
 }

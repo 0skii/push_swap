@@ -54,6 +54,7 @@ int			freaknorm(t_head *list);
 void		mini_sort3_pt1(t_head *list);
 void		mini_sort3_pt2(t_head *list);
 void		mini_sort5(t_head *stack_a, t_head *stack_b);
+void		average_push(t_head *stack_a, t_head *stack_b);
 void		whatever_the_fuck(t_head *stack_a, t_head *stack_b);
 /*List Moves*/
 void		sa(t_head *stack_a);

@@ -111,7 +111,7 @@ int	main(int argc, char **argv)
 		return (free_this(&stack_a, 2));
 	printf("List Size: %f\n", stack_a.size);
 	whatever_the_fuck(&stack_a, &stack_b);
-	//print_list(&stack_a);
+	print_list(&stack_a);
 	if (check_sort(&stack_a))
 		ft_printf("Sorted\n");
 	free_this(&stack_a, 2);
