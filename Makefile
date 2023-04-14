@@ -62,4 +62,7 @@ re:			fclean all
 joke:		all
 			@echo "$(BLUE) Why do Java programmers have to wear glasses? Because they do not C sharp.$(CLR_RMV)"
 
+parrot:		all
+			@curl parrot.live
+
 .PHONY:		all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:21 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/13 16:47:41 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/14 11:45:52 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,16 @@ typedef struct t_list
 {
 	long int		content;
 	struct t_list	*next;
+	long int		chair;
 }					t_list;
 
 /*Control Structure*/
 typedef struct t_head
 {
-	t_list	*first;
-	float	size;
-}			t_head;
+	t_list		*first;
+	float		size;
+	long int	chair;
+}				t_head;
 
 /*Converter/Parsing*/
 void		atoi_add(char *str, t_head *stack_a);

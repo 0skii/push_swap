@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:25:57 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/14 01:36:03 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/14 11:42:22 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	atoi_add(char *str, t_head *stack_a)
 I also increment my size variable here to keep track of the size of my list.*/
 t_head	*new_nb(t_head *list, int nb)
 {
-	t_list	*data;
-	t_list	*x;
+	t_list			*data;
+	t_list			*x;
 
 	data = (t_list *)malloc(sizeof(*data));
 	data->content = nb;
@@ -85,7 +85,7 @@ void	print_list(t_head *list)
 	x = list->first;
 	while (x)
 	{
-		ft_printf("%i -> ", x->content);
+		ft_printf("%i(%i) -> ", x->content, );
 		x = x->next;
 	}
 	write(1, "NULL\n", 6);
@@ -109,8 +109,9 @@ int	main(int argc, char **argv)
 	check_double(&stack_a);
 	if (check_sort(&stack_a))
 		return (free_this(&stack_a, 2));
+	printf("List Size: %f\n", stack_a.size);
 	whatever_the_fuck(&stack_a, &stack_b);
-	print_list(&stack_a);
+	//print_list(&stack_a);
 	if (check_sort(&stack_a))
 		ft_printf("Sorted\n");
 	free_this(&stack_a, 2);
