@@ -12,7 +12,14 @@
 
 #include "../includes/push_swap.h"
 
-t_head	chair_nb(t_head *list)
+t_head  chair_nb(t_head *list)
 {
-	
+    static long int chair;
+    t_list          *x;
+
+    x = list->first;
+    while (x)
+    {
+        
+    }
 }
