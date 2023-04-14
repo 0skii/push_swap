@@ -26,6 +26,7 @@ typedef struct t_list
 {
 	long int		content;
 	struct t_list	*next;
+	long int		chair;
 }					t_list;
 
 /*Control Structure*/
@@ -33,6 +34,7 @@ typedef struct t_head
 {
 	t_list		*first;
 	float		size;
+	long int	chair;
 }				t_head;
 
 /*Converter/Parsing*/

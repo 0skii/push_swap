@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:25:57 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/14 11:42:22 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/14 12:23:04 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	print_list(t_head *list)
 	x = list->first;
 	while (x)
 	{
-		ft_printf("%i(%i) -> ", x->content, );
+		ft_printf("%i -> ", x->content);
 		x = x->next;
 	}
 	write(1, "NULL\n", 6);
