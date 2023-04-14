@@ -43,13 +43,11 @@ CYAN 		:= \033[1;36m
 RM		    := rm -f
 
 ${NAME}:	${OBJS}
-			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
+			@echo "$(GREEN)Compilation of $(RED)$(NAME) $(GREEN)...${CLR_RMV}"
 			${CC} ${FLAGS} -o ${NAME} ${OBJS}
-			@echo "$(GREEN)$(NAME) created[0m ✔️"
+			@echo "$(GREEN)Good job! $(RED)$(NAME) $(GREEN)created ✔️"
 
 all:		${NAME}
-
-bonus:		all
 
 clean:
 			@ ${RM} *.o */*.o */*/*.o
@@ -60,5 +58,8 @@ fclean:		clean
 			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
 
 re:			fclean all
+
+joke:		all
+			@echo "$(BLUE) Why do Java programmers have to wear glasses? Because they do not C sharp.$(CLR_RMV)"
 
 .PHONY:		all clean fclean re
