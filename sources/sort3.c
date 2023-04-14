@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:27:49 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/13 17:00:08 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/14 01:05:34 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	mini_sort3_pt1(t_head *list)
 	mini_sort3_pt2(list);
 }
 
+/*Norm error for too many lines, hence a pt2 for the previous function.*/
 void	mini_sort3_pt2(t_head *list)
 {
 	t_list		*x;
