@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:25:57 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/14 12:23:04 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:59:45 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,11 +109,11 @@ int	main(int argc, char **argv)
 	check_double(&stack_a);
 	if (check_sort(&stack_a))
 		return (free_this(&stack_a, 2));
-	printf("List Size: %f\n", stack_a.size);
+	//printf("List Size: %f\n", stack_a.size);
 	whatever_the_fuck(&stack_a, &stack_b);
-	print_list(&stack_a);
-	if (check_sort(&stack_a))
-		ft_printf("Sorted\n");
+	//print_list(&stack_a);
+	/*if (check_sort(&stack_a))
+		ft_printf("Sorted\n");*/
 	free_this(&stack_a, 2);
 	free_this(&stack_b, 2);
 }

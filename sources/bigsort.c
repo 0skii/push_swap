@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 21:47:01 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/14 21:50:26 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/15 03:52:14 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,31 @@ int average(t_head *list)
     }
     sum = sum / list->size;
     //ft_printf("%i\n", sum);
+	return (sum);
 }
 
-void    average_push(t_head *stack_a, t_head *stack_b)
+void	average_push(t_head *stack_a, t_head *stack_b)
 {
     t_list  *x;
 
-    while (stack_a->size > 5 && x)
+	while (stack_a->size > 5)
     {
-        x = stack_a->first;
-        if (x->content < average(stack_a) && x == stack_a->first)
-            pb(stack_a, stack_b);
-        else if (x->content < average(stack_a))
-        {
+		x = stack_a->first;
+		if (x->content < average(stack_a))
+		{
             node_move(stack_a, x, r_or_rr(stack_a));
-            pb(stack_a, stack_b);
-        }
-        x = x->next;
+			pb(stack_a, stack_b);
+			if (stack_b->size > 1 && x->content < average(stack_b))
+				rb(stack_b);
+		}
+		else if (x->content >= average(stack_a))
+			ra(stack_a);
     }
+	mini_sort5(stack_a, stack_b);
+}
+
+void	optimize_b(t_head *stack_b, t_list *node)
+{
+	if (stack_b->size > 1 && node->content < average(stack_b) / 2)
+		rb(stack_b);
 }
