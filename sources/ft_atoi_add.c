@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:25:57 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/14 22:59:45 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/15 11:49:48 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	atoi_add(char *str, t_head *stack_a)
 		str++;
 	if (!*str)
 	{
-		free_this(stack_a, 1);
+		ult_free(stack_a->first);
 	}
 	while (*str && *str >= '0' && *str <= '9')
 		res = res * 10 + *str++ - 48;
@@ -37,7 +37,7 @@ void	atoi_add(char *str, t_head *stack_a)
 	if ((*str >= 9 && *str <= 13) || *str == 32)
 		atoi_add(str, stack_a);
 	else if (*str)
-		free_this(stack_a, 1);
+		ult_free(stack_a->first);
 	return ;
 }
 
@@ -108,12 +108,11 @@ int	main(int argc, char **argv)
 	}
 	check_double(&stack_a);
 	if (check_sort(&stack_a))
-		return (free_this(&stack_a, 2));
+		return (ult_free(stack_a.first));
 	//printf("List Size: %f\n", stack_a.size);
 	whatever_the_fuck(&stack_a, &stack_b);
 	//print_list(&stack_a);
 	/*if (check_sort(&stack_a))
 		ft_printf("Sorted\n");*/
-	free_this(&stack_a, 2);
-	free_this(&stack_b, 2);
+	ult_free(stack_a.first);
 }

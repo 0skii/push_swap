@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:21:16 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/15 01:42:09 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/15 14:48:52 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ t_list	*find_min(t_head *list)
 	return (min_node);
 }
 
-/*I use the list_size function to count positions from the smallest
+/*I use the node_to_bottom function to count positions from the smallest
 node (in the situation I use it) to the end of the list.*/
-long int	list_size(t_list *node)
+long int	node_to_bottom(t_list *node)
 {
 	int	i;
 
@@ -52,7 +52,7 @@ I use r_or_rr function to find out if it is in the first half of
 the list or in the second half. Returning 0 or 1 accordingly.*/
 int	r_or_rr(t_head *list)
 {
-	if (list->size / 2 > list_size(find_min(list)))
+	if (list->size / 2 > node_to_bottom(find_min(list)))
 		return (1);
 	else
 		return (0);

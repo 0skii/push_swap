@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:10 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/13 15:38:48 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/15 11:47:14 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 /*The free_this function frees the memory allocated for each node
 of my list. Either from an error or after every task was done successfully.*/
-int	free_this(t_head *list, int torf)
+/*int	free_this(t_head *stack_a, int torf)
 {
 	t_list	*x;
 	t_list	*x2;
 
-	x = list->first;
-	x2 = list->first->next;
+	x = stack_a->first;
+	x2 = stack_a->first->next;
 	while (x2)
 	{
 		free(x);
@@ -33,6 +33,14 @@ int	free_this(t_head *list, int torf)
 	else if (torf == 2)
 		ft_printf("Memory freed\n");
 	exit(torf);
+}*/
+
+int	ult_free(t_list *node)
+{
+	if (node->next)
+		ult_free(node->next);
+	free(node);
+	return (0);
 }
 
 /*The check_double function merely checks if there's any duplicate numbers
@@ -52,7 +60,7 @@ void	check_double(t_head *list)
 		while (x2)
 		{
 			if (x->content == x2->content)
-				free_this(list, 1);
+				ult_free(list->first);
 			x2 = x2->next;
 		}
 		x = x->next;
