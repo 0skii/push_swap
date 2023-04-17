@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 00:54:41 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/15 14:49:45 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/17 23:02:15 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ void	whatever_the_fuck(t_head *stack_a, t_head *stack_b)
 	else if (i > 3 && i <= 5)
 		mini_sort5(stack_a, stack_b);
 	else if (i > 5)
+	{
 		average_push(stack_a, stack_b);
+		go_to_friend(stack_a, stack_a);
+	}
 }
