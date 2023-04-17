@@ -5,52 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 21:47:01 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/15 03:52:14 by ozerbib-         ###   ########.fr       */
+/*   Created: 2023/04/15 14:52:59 by ozerbib-          #+#    #+#             */
+/*   Updated: 2023/04/17 19:30:59 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int average(t_head *list)
+t_list	*phone_a_friend(t_head *stack_a, t_head *stack_b)
 {
-	t_list      *x;
-    long int    sum;
+	long int	b_node;
+	t_list		*xa;
+	t_list		*reta;
+	int			min_diff;
 
-    x = list->first;
-    sum = 0;
-    while (x)
-    {
-        sum += x->content;
-        x = x->next;
-    }
-    sum = sum / list->size;
-    //ft_printf("%i\n", sum);
-	return (sum);
-}
-
-void	average_push(t_head *stack_a, t_head *stack_b)
-{
-    t_list  *x;
-
-	while (stack_a->size > 5)
-    {
-		x = stack_a->first;
-		if (x->content < average(stack_a))
+	b_node = stack_b->first->content;
+	xa = stack_a->first;
+	min_diff = INT_MAX;
+	while (xa)
+	{
+		if ((xa->content - b_node) > 0 && (xa->content - b_node) < min_diff)
 		{
-            node_move(stack_a, x, r_or_rr(stack_a));
-			pb(stack_a, stack_b);
-			if (stack_b->size > 1 && x->content < average(stack_b))
-				rb(stack_b);
+			min_diff = xa->content - b_node;
+			reta = xa;
 		}
-		else if (x->content >= average(stack_a))
-			ra(stack_a);
-    }
-	mini_sort5(stack_a, stack_b);
-}
-
-void	optimize_b(t_head *stack_b, t_list *node)
-{
-	if (stack_b->size > 1 && node->content < average(stack_b) / 2)
-		rb(stack_b);
+		xa = xa->next;
+	}
+	ft_printf("%i\n", reta->content);
+	return (reta);
 }

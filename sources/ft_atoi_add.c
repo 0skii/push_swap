@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:25:57 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/15 11:49:48 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/17 19:31:33 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,9 @@ int	main(int argc, char **argv)
 	if (check_sort(&stack_a))
 		return (ult_free(stack_a.first));
 	//printf("List Size: %f\n", stack_a.size);
-	whatever_the_fuck(&stack_a, &stack_b);
+	//whatever_the_fuck(&stack_a, &stack_b);
+	new_nb(&stack_b, 9);
+	phone_a_friend(&stack_a, &stack_b);
 	//print_list(&stack_a);
 	/*if (check_sort(&stack_a))
 		ft_printf("Sorted\n");*/
