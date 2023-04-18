@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 00:54:41 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/17 23:02:15 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/18 14:15:46 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void	whatever_the_fuck(t_head *stack_a, t_head *stack_b)
 {
 	long int	i;
 
-	i = 1;
-	i += node_to_bottom(stack_a->first);
+	i = stack_a->size;
 	if (i > 1 && i <= 3)
 		mini_sort3_pt1(stack_a);
 	else if (i > 3 && i <= 5)
@@ -27,6 +26,6 @@ void	whatever_the_fuck(t_head *stack_a, t_head *stack_b)
 	else if (i > 5)
 	{
 		average_push(stack_a, stack_b);
-		go_to_friend(stack_a, stack_a);
+		go_to_friend(stack_a, stack_b);
 	}
 }

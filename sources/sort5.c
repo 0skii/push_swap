@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:21:16 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/15 14:48:52 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/18 11:59:44 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ long int	node_to_bottom(t_list *node)
 	int	i;
 
 	i = 0;
-	while (node->next)
+	while (node)
 	{
 		node = node->next;
 		i++;
