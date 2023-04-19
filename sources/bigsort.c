@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 14:52:59 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/18 17:16:16 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:23:02 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	go_to_friend(t_head *stack_a, t_head *stack_b)
 		pa(stack_b, stack_a);
 		x = stack_b->first;
 	}
-	min_to_top(stack_a);
 }
 
 void	min_to_top(t_head *stack_a)
