@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bigsort.c                                          :+:      :+:    :+:   */
+/*   kindasort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 21:47:01 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/15 03:52:14 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:45:45 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,4 @@ void	average_push(t_head *stack_a, t_head *stack_b)
 			ra(stack_a);
     }
 	mini_sort5(stack_a, stack_b);
-}
-
-void	optimize_b(t_head *stack_b, t_list *node)
-{
-	if (stack_b->size > 1 && node->content < average(stack_b) / 2)
-		rb(stack_b);
 }

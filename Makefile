@@ -25,7 +25,7 @@ SRCS        :=      ft_printf/sources/ft_printf.c \
                           sources/swap.c \
                           sources/call_algo.c \
                           sources/kindasort.c \
-						  sources/bigsort.c
+						  sources/bigsort.c 
                           
 OBJS        := $(SRCS:.c=.o)
 

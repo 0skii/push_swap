@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 14:52:59 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/19 12:23:02 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/19 19:31:27 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ t_list	*phone_a_friend(t_head *stack_a, t_list *b)
 	}
 	if (!reta)
 		reta = find_min(stack_a);
-	//ft_printf("%i\n", reta->content);
 	return (reta);
 }
 
@@ -47,12 +46,14 @@ void	go_to_friend(t_head *stack_a, t_head *stack_b)
 	{
 		if (stack_a->size / 2 > node_to_bottom(phone_a_friend(stack_a, x)))
 		{
-			while (stack_a->first->content != phone_a_friend(stack_a, x)->content)
+			while (stack_a->first->content != \
+			phone_a_friend(stack_a, x)->content)
 				rra(stack_a);
 		}
 		else
 		{
-			while (stack_a->first->content != phone_a_friend(stack_a, x)->content)
+			while (stack_a->first->content != \
+			phone_a_friend(stack_a, x)->content)
 				ra(stack_a);
 		}
 		pa(stack_b, stack_a);
@@ -64,4 +65,35 @@ void	min_to_top(t_head *stack_a)
 {
 	while (find_min(stack_a)->content != stack_a->first->content)
 		rra(stack_a);
+}
+
+int	get_pos(t_head *list, t_list *node)
+{
+	t_list *x;
+	int		i;
+
+	x = list->first;
+	i = 0;
+	while (x)
+	{
+		i++;
+		x = x->next;
+	}
+	return (i);
+}
+
+void	check_cost(t_head *stack_b, t_head *stack_a)
+{
+	t_list 	*x;
+	int		cumul;
+	
+	x = stack_b->first;
+	cumul = 0;
+	while (x)
+	{
+		if (get_pos(stack_b, x) > stack_b->size / 2 \
+		|| get_pos(stack_a, phone_a_friend(stack_a, x)) > stack_a->size / 2)	
+		
+		cumul = get_pos(stack_a, phone_a_friend(stack_a, x)) + get_pos(stack_b, x);
+	}	
 }
