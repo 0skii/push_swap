@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:10 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/15 11:47:14 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/20 01:31:48 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,10 @@ int	check_sort(t_head *list)
 		x2 = x2->next;
 	}
 	return (1);
+}
+
+void	min_to_top(t_head *stack_a)
+{
+	while (find_min(stack_a)->content != stack_a->first->content)
+		rra(stack_a);
 }

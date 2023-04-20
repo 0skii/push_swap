@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:21 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/19 18:07:46 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/20 02:02:56 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,11 @@ long int	node_to_bottom(t_list *node);
 void		node_move(t_head *list, t_list *node, int bora);
 int			freaknorm(t_head *list);
 t_list		*phone_a_friend(t_head *stack_a, t_list *b);
-void		go_to_friend(t_head *stack_a, t_head *stack_b);
 void		min_to_top(t_head *stack_a);
+int			get_pos(t_head *list, t_list *node);
+t_list		*check_cost(t_head *stack_b, t_head *stack_a);
+int			check_half(t_head *list, t_list *node);
+void 		good_nodes_to_top(t_head *stack_b, t_head *stack_a);
 /*Algos*/
 void		mini_sort3_pt1(t_head *list);
 void		mini_sort3_pt2(t_head *list);
