@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 00:54:41 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/20 01:55:11 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/23 17:55:02 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	whatever_the_fuck(t_head *stack_a, t_head *stack_b)
 	else if (i > 5)
 	{
 		average_push(stack_a, stack_b);
-		good_nodes_to_top(stack_b, stack_a);
+		best_to_top(stack_a, stack_b);
 		min_to_top(stack_a);
 	}
 }

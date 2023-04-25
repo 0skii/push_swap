@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:25:57 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/19 15:20:02 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:49:00 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 /*atoi_add is my void function to convert characters into integers.
 First, skipping thru all tabs and spaces, recognizing if
-a sign is present then making the conversion to integers.*/
+a sign is present then making the conversion to integers. Once thats done,
+I call the new_nb function to add each number to my first stack.*/
 void	atoi_add(char *str, t_head *stack_a)
 {
 	long long int	res;
@@ -24,11 +25,13 @@ void	atoi_add(char *str, t_head *stack_a)
 	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
 	sign = (*str != '-') - (*str == '-');
-	if ((*str == '+' || *str == '-'))
+	if (*str == '+' || *str == '-')
 		str++;
-	if (!*str)
+	if (*str && (*str < '0' || *str > '9'))
 	{
+		ft_printf("Error\n");
 		ult_free(stack_a->first);
+		exit (0);
 	}
 	while (*str && *str >= '0' && *str <= '9')
 		res = res * 10 + *str++ - 48;
@@ -37,13 +40,13 @@ void	atoi_add(char *str, t_head *stack_a)
 	if ((*str >= 9 && *str <= 13) || *str == 32)
 		atoi_add(str, stack_a);
 	else if (*str)
-		ult_free(stack_a->first);
+		ft_printf("Error\n");
 	return ;
 }
 
 /*new_nb is the function I use to add nodes into my linked list.
 I also increment my size variable here to keep track of the size of my list.*/
-t_head	*new_nb(t_head *list, int nb)
+t_head	*new_nb(t_head *list, long int nb)
 {
 	t_list			*data;
 	t_list			*x;
@@ -106,12 +109,13 @@ int	main(int argc, char **argv)
 		atoi_add(argv[i], &stack_a);
 		i++;
 	}
-	check_double(&stack_a);
+	if (check_double(&stack_a) || check_max(&stack_a))
+	{
+		ft_printf("Error\n");
+		return (ult_free(stack_a.first));
+	}
 	if (check_sort(&stack_a))
 		return (ult_free(stack_a.first));
 	whatever_the_fuck(&stack_a, &stack_b);
-	/*print_list(&stack_a);*/
-	if (check_sort(&stack_a))
-		ft_printf("Sorted\n");
 	ult_free(stack_a.first);
 }

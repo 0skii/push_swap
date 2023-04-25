@@ -6,7 +6,7 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:27:49 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/15 14:49:45 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/24 17:29:42 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ void	mini_sort3_pt1(t_head *list)
 		return ;
 	x = list->first;
 	x2 = x->next;
-	i = 1;
-	i += node_to_bottom(x);
+	i = list->size;
 	if (x->content > x2->content)
 	{
 		if (freaknorm(list) == 1)

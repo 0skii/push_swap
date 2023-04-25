@@ -3,7 +3,7 @@
 ################################################################################
 NAME     := push_swap
 CC       := gcc
-FLAGS    := -Wall -Wextra -Werror -g -fsanitize=address
+FLAGS    := -Wall -Wextra -Werror
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
@@ -61,7 +61,7 @@ fclean:		clean
 
 re:			fclean all
 
-joke:		all
+joke:		clean
 			@echo "$(BLUE) Why do Java programmers have to wear glasses? Because they do not C sharp.$(CLR_RMV)"
 
 parrot:		all

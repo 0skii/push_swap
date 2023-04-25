@@ -6,35 +6,14 @@
 /*   By: ozerbib- <ozerbib-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:26:10 by ozerbib-          #+#    #+#             */
-/*   Updated: 2023/04/20 01:31:48 by ozerbib-         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:18:16 by ozerbib-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/*The free_this function frees the memory allocated for each node
-of my list. Either from an error or after every task was done successfully.*/
-/*int	free_this(t_head *stack_a, int torf)
-{
-	t_list	*x;
-	t_list	*x2;
-
-	x = stack_a->first;
-	x2 = stack_a->first->next;
-	while (x2)
-	{
-		free(x);
-		x = x2;
-		x2 = x->next;
-	}
-	free(x);
-	if (torf == 1)
-		ft_printf("Error\n");
-	else if (torf == 2)
-		ft_printf("Memory freed\n");
-	exit(torf);
-}*/
-
+/*The ult_free recursive function frees the memory allocated for each node
+(last to first) of my list.*/
 int	ult_free(t_list *node)
 {
 	if (node->next)
@@ -46,13 +25,13 @@ int	ult_free(t_list *node)
 /*The check_double function merely checks if there's any duplicate numbers
 going into the list. If that is the case, I free everything then exit
 using my free_this function above.*/
-void	check_double(t_head *list)
+int	check_double(t_head *list)
 {
 	t_list	*x;
 	t_list	*x2;
 
 	if (!(list->first))
-		return ;
+		return (0);
 	x = list->first;
 	x2 = list->first->next;
 	while (x->next)
@@ -60,12 +39,13 @@ void	check_double(t_head *list)
 		while (x2)
 		{
 			if (x->content == x2->content)
-				ult_free(list->first);
+				return (1);
 			x2 = x2->next;
 		}
 		x = x->next;
 		x2 = x->next;
 	}
+	return (0);
 }
 
 /*I use the check_sort function to verify if my list has been sorted
@@ -91,8 +71,27 @@ int	check_sort(t_head *list)
 	return (1);
 }
 
+/*My check_max function is a simple protection against a node value above
+the int limits*/
+int	check_max(t_head *list)
+{
+	t_list	*x;
+
+	x = list->first;
+	while (x)
+	{
+		if (x->content > INT_MAX || x->content < INT_MIN)
+			return (1);
+		x = x->next;
+	}
+	return (0);
+}
+
+/*Once I had run my big algorithms i noticed that sometimes the linked list
+was sorted but not with the minimum value on top of the list. So I created
+the min_to_top function.*/
 void	min_to_top(t_head *stack_a)
 {
 	while (find_min(stack_a)->content != stack_a->first->content)
-		rra(stack_a);
+		ra(stack_a);
 }
